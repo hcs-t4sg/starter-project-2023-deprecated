@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ms-vsliveshare.vsliveshare",
+    "aaron-bond.better-comments",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig"
+  ]
+}
