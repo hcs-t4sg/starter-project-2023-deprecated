@@ -34,7 +34,7 @@ const config = {
       },
     ],
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // https://typescript-eslint.io/rules/no-unused-vars/
-    "prettier/prettier": "error", // https://www.robinwieruch.de/prettier-eslint/
+    "prettier/prettier": "warn", // https://www.robinwieruch.de/prettier-eslint/
     "no-console": "warn",
   },
 };

@@ -4,6 +4,7 @@
     "ms-vsliveshare.vsliveshare",
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "prisma.prisma"
   ]
 }
