@@ -26,6 +26,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/eslint": "^8.37.0",
+    "@types/lint-staged": "^13.2.0",
     "@types/node": "^18.16.0",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.2.6",
@@ -36,6 +37,8 @@
     "eslint-config-next": "^13.4.2",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "prisma": "^4.14.0",
     "typescript": "^5.0.4"

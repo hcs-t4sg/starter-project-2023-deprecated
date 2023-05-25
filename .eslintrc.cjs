@@ -3,6 +3,7 @@ const path = require("path");
 
 /** @type {import("eslint").Linter.Config} */
 const config = {
+  root: true, // Ignores config files in parent directories
   overrides: [
     // https://eslint.org/docs/latest/use/configure/configuration-files
     // It is possible to override settings based on file glob patterns in your configuration by using the overrides key.
@@ -34,6 +35,7 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // https://typescript-eslint.io/rules/no-unused-vars/
     "prettier/prettier": "error", // https://www.robinwieruch.de/prettier-eslint/
+    "no-console": "warn",
   },
 };
 
