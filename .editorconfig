@@ -1,0 +1,14 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+# https://softwareengineering.stackexchange.com/questions/57/tabs-versus-spaces-what-is-the-proper-indentation-character-for-everything-in-e
+indent_size = 2
+trim_trailing_whitespace = true
+max_line_length = 120
+
+[*.md]
+trim_trailing_whitespace = false
