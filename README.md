@@ -1,5 +1,28 @@
 # T4SG Starter Project
 
+- [T4SG Starter Project](#t4sg-starter-project)
+  - [Introduction](#introduction)
+  - [Setup](#setup)
+  - [Stack references](#stack-references)
+    - [Typescript](#typescript)
+    - [Next.js](#nextjs)
+    - [Supabase](#supabase)
+    - [Prisma](#prisma)
+    - [tRPC](#trpc)
+  - [Development tools](#development-tools)
+    - [Code formatting and linting tools](#code-formatting-and-linting-tools)
+      - [`eslint`](#eslint)
+      - [`prettier`](#prettier)
+      - [EditorConfig](#editorconfig)
+      - [`husky` and `lint-staged`](#husky-and-lint-staged)
+      - [VSCode-specific settings](#vscode-specific-settings)
+    - [VSCode Extensions](#vscode-extensions)
+      - [`eslint`, `prettier`, `editorconfig`, and `prisma`](#eslint-prettier-editorconfig-and-prisma)
+      - [BetterComments](#bettercomments)
+      - [Live Share](#live-share)
+  - [Deployment guides](#deployment-guides)
+  - [T3 stack references](#t3-stack-references)
+
 ## Introduction
 
 This project is a versatile starter project for T4SG web development projects. The stack and development tools have been chosen carefully to enable teams to develop rapidly on a variety of projects and build apps that are more easily maintainable by clients post-handoff.
