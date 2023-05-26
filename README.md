@@ -23,11 +23,15 @@
   - [Deployment guides](#deployment-guides)
   - [T3 stack references](#t3-stack-references)
 
+---
+
 ## Introduction
 
 This project is a versatile starter project for T4SG web development projects. The stack and development tools have been chosen carefully to enable teams to develop rapidly on a variety of projects and build apps that are more easily maintainable by clients post-handoff.
 
 The stack is based on the popular, industry-standard [T3 Stack](https://create.t3.gg/en/introduction) (bootstrapped with a tool called `create-t3-app`). The frontend is written in Typescript and uses Next.js, a React-based framework that offers significant optimizations with relatively small learning curve. The backend uses Supabase, an open-source Firebase alternative which provides a Postgres database, user authentication, file storage, edge functions, and realtime subscriptions. In between, we use Prisma, an ORM (object-relational mapping) for Typescript that provides a typesafe client and schema to interact with Supabase. Finally, we use tRPC to create typesafe API routes to query the Prisma schema from our frontend. These components synergize to produce a highly flexible webapp with full-stack typesafety.
+
+---
 
 ## Setup
 
