@@ -39,7 +39,7 @@ The stack is based on the popular, industry-standard [T3 Stack](https://create.t
 
 ## Stack references
 
-This section provides a short description and important commands related to each component of the stack.
+This section provides a short description and important commands related to each component of the stack. The T3 guides to each component are also linked, which should be helpful especially for understanding how the different components synchronize together and how some of the boilerplate code in the app works.
 
 ### Typescript
 
@@ -99,7 +99,16 @@ The backend uses [Supabase](https://supabase.com), an open-source Firebase alter
 
 ### Prisma
 
-Prisma is an ORM ([object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping)) for Typescript that allows you to manage your database schema in a `schema.prisma` file, then generate a type-safe client used to query our database (in this case, Supabase). With Prisma, we can ensure alignment between our codebase and database schema and manage our database from our codebase, all within the safety of Typescript.
+Prisma is an ORM ([object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping)) for Typescript that allows you to manage your database schema in a `schema.prisma` file, then generate a type-safe client used in the backend to query our database (in this case, Supabase). With Prisma, we can ensure alignment between our codebase and database schema and manage our database from our codebase, all within the safety of Typescript.
+
+**More important commands TBA.**
+
+Prisma also provides Prisma Studio, a GUI for viewing and editing your database. You can launch it with the following terminal command:
+
+```bash
+# Launch Prisma Studio
+npx prisma studio
+```
 
 > **More references**
 >
@@ -109,9 +118,14 @@ Prisma is an ORM ([object-relational mapping](https://en.wikipedia.org/wiki/Obje
 
 ### tRPC
 
-Finally, we use tRPC to create typesafe API routes to query the Prisma schema from our frontend. These components synergize to produce a highly flexible webapp with full-stack typesafety.
+tRPC allows to create typesafe API routes that are callable from the frontend with full typesafety and autocompletion. With tRPC, you write TypeScript functions on the backend (for instance, one querying our database through Prisma), and then call these functions from the frontend.
 
-[tRPC](https://trpc.io)
+**More important commands TBA.**
+
+> **More references**
+>
+> - [T3 guide to tRPC](https://create.t3.gg/en/usage/trpc)
+> - [Official tRPC documentation](https://trpc.io)
 
 ### Environment variables
 
