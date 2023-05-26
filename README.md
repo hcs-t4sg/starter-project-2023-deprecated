@@ -153,6 +153,8 @@ Enables you to collaboratively edit and debug with others in real time. Think Go
 
 The T3 stack documentation provides deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker).
 
+---
+
 ## T3 stack references
 
 To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
