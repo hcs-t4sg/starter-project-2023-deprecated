@@ -203,7 +203,6 @@ npx prisma studio
 > **More references**
 >
 > - [T3 guide to Prisma](https://create.t3.gg/en/usage/prisma)
->
 > - [Official Prisma documentation](https://prisma.io)
 
 ### tRPC
