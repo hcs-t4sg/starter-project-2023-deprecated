@@ -1,5 +1,3 @@
-# T4SG Starter Project
-
 - [T4SG Starter Project](#t4sg-starter-project)
   - [Introduction](#introduction)
   - [Setup](#setup)
@@ -22,6 +20,8 @@
       - [Live Share](#live-share)
   - [Deployment guides](#deployment-guides)
   - [T3 stack references](#t3-stack-references)
+
+# T4SG Starter Project
 
 ## Introduction
 
