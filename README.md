@@ -125,6 +125,17 @@ You can run the webapp with the following terminal command:
 npm run dev
 ```
 
+#### (Recommended) Configure git message template
+
+This project also includes a template for writing good git commit messages. You can configure this template (affects only the project repo) using the following terminal command:
+
+```bash
+# Set git commit message to the .gitmessage file (this only affects git in the project repo, not globally)
+git config commit.template .gitmessage
+```
+
+In future commits, you can run `git commit` (with no attached message or `-m` tag) to open the commit message template in VSCode. Fill in the blanks, save the file (`cmd + S`), and close the file (`cmd + W`) to finish the commit.
+
 ---
 
 ## Stack references
