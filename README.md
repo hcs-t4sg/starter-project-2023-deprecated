@@ -3,12 +3,17 @@
 - [T4SG Starter Project](#t4sg-starter-project)
   - [Introduction](#introduction)
   - [Setup](#setup)
+    - [Clone repository](#clone-repository)
+    - [Package installation](#package-installation)
+    - [Database Setup](#database-setup)
+    - [Run the webapp](#run-the-webapp)
   - [Stack references](#stack-references)
     - [Typescript](#typescript)
     - [Next.js](#nextjs)
     - [Supabase](#supabase)
     - [Prisma](#prisma)
     - [tRPC](#trpc)
+    - [Environment variables](#environment-variables)
   - [Development tools](#development-tools)
     - [Code formatting and linting tools](#code-formatting-and-linting-tools)
       - [`eslint`](#eslint)
@@ -67,6 +72,7 @@ git clone git@github.com:hcs-t4sg/starter-project-2023-core.git
    - If you get something like "command not found", you might not have `npm` installed.
 
 - If successful you should see something like:
+
   ```bash
   added 414 packages, and audited 415 packages in 13s
 
