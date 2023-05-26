@@ -35,6 +35,90 @@ The stack is based on the popular, industry-standard [T3 Stack](https://create.t
 
 ## Setup
 
+#### Clone repository
+
+`cd` into a desired destination folder, then clone the repo (preferably using SSH):
+
+```shell
+git clone git@github.com:hcs-t4sg/starter-project-2023-core.git
+```
+
+#### Package installation
+
+1. Open the project folder in VSCode. You can do so with the following terminal shortcut:
+
+   ```bash
+   # Navigate into the project directory
+   cd starter-project-2023-core.git
+
+   # Open in VSCode
+   code .
+
+   # If the second error gives you an error, you probably don't have the VS Code 'code' keyword added to your PATH variable. Follow this tutorial:
+   # https://www.freecodecamp.org/news/how-to-open-visual-studio-code-from-your-terminal/#:~:text=Once%20your%20terminal%20is%20open,Then%20hit%20enter%20.&text=Once%20you%20hit%20enter%20%2C%20VS%20Code%20will%20now%20open.
+   ```
+
+2. You should see a popup in the bottom right prompting you to install recommended extensions. Please install these, they'll be helpful for code formatting and developing the webapp. You can also view the recommended extensions in the extensions sidebar (`cmd + shift + X`.) You will also get a prompt to use the workspace's Typescript version; accept it.
+
+3. Open a terminal in the project folder by dragging up from the bottom of the code window or by going to `Terminal > New Terminal` in the menu bar.
+
+4. Run: `npm install` (`npm i` for short)
+
+   - If you get something like "command not found", you might not have `npm` installed.
+
+- If successful you should see something like:
+  ```bash
+  added 414 packages, and audited 415 packages in 13s
+
+  149 packages are looking for funding
+  run `npm fund` for details
+
+  found 0 vulnerabilities
+  ```
+
+#### Database Setup
+
+1. Visit the Supabase website, create an account (or login if you already have one), and create a new project. You will be prompted to set a **Database Password; remember it**. Wait for your database provisioning and setup to finish.
+
+2. Navigate to Project Settings (left sidebar) > Database (left sidebar) > Connection string > Nodejs. Copy the string provided, it should look something like this: `postgresql://postgres:[YOUR-PASSWORD]@db.abcdefghijklmnopqrst.supabase.co:5432/postgres`
+
+3. Duplicate the `.env.example` file (into your root project directory) and rename to `.env`. Inside `.env`, set the `DATABASE_URL` to the connection string you copied earlier. Then replace `[YOUR-PASSWORD]` with your database password. The final result should look something like this:
+
+   ```shell
+   # Some other comments above
+   DATABASE_URL="postgresql://postgres:ThisIsMyPassword123@db.abcdefghijklmnopqrst.supabase.co:5432/postgres"
+   ```
+
+4. Now that your Prisma client is connected to your Supabase database, you can test the connection by pushing your Prisma schema (found in `prisma/schema.prisma`) to Supabase. You can do that with the following terminal command:
+
+   ```bash
+   # Push Prisma schema to database
+   npx prisma db push
+   ```
+
+   You should see an output like:
+
+   ```bash
+   Environment variables loaded from .env
+   Prisma schema loaded from prisma/schema.prisma
+   Datasource "db": PostgreSQL database "postgres", schema "public" at "db.abcdefghijklmnopqrst.supabase.co:5432"
+
+   🚀  Your database is now in sync with your Prisma schema. Done in 2.10s
+
+   ✔ Generated Prisma Client (4.14.1 | library) to ./node_modules/@prisma/client in 89ms
+   ```
+
+   If you check Supabase, you should be able to see the new schema in the database (an Example table with columns `id`, `createdAt`, and `updatedAt`).
+
+#### Run the webapp
+
+You can run the webapp with the following terminal command:
+
+```bash
+# Start the webapp in development mode (usually what you do in development). Exit with Ctrl + C
+npm run dev
+```
+
 ---
 
 ## Stack references
