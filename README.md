@@ -29,7 +29,7 @@
 
 This project is a versatile starter project for T4SG web development projects. The stack and development tools have been chosen carefully to enable teams to develop rapidly on a variety of projects and build apps that are more easily maintainable by clients post-handoff.
 
-The stack is based on the popular, industry-standard [T3 Stack](https://create.t3.gg/en/introduction) (bootstrapped with a tool called `create-t3-app`). The frontend is written in Typescript and uses Next.js, a React-based framework that offers significant optimizations with relatively small learning curve. The backend uses Supabase, an open-source Firebase alternative which provides a Postgres database, user authentication, file storage, edge functions, and realtime subscriptions. In between, we use Prisma, an ORM (object-relational mapping) for Typescript that provides a typesafe client and schema to interact with Supabase. Finally, we use tRPC to create typesafe API routes to query the Prisma schema from our frontend. These components synergize to produce a highly flexible webapp with full-stack typesafety.
+The stack is based on the popular, industry-standard [T3 Stack](https://create.t3.gg/en/introduction) (bootstrapped with a tool called `create-t3-app`). The frontend is written in Typescript and uses Next.js, a React-based framework with significant optimizations. The backend uses Supabase, an open-source Firebase alternative. In between, we use Prisma and tRPC to fully carry typesafety from the backend to the frontend. These components synergize to produce a highly flexible webapp with full-stack typesafety.
 
 ---
 
@@ -39,9 +39,11 @@ The stack is based on the popular, industry-standard [T3 Stack](https://create.t
 
 ## Stack references
 
+This section provides a short description and important commands related to each component of the stack.
+
 ### Typescript
 
-[Typescript](https://create.t3.gg/en/usage/typescript)
+Typescript is a strongly-typed programming language based on Javascript. It integrates closely with your editor and provides type inference and static type checking to catch errors/bugs early-on and provide a great developer experience. Furthermore, it is a superset of Javascript and can be transpiled to any version of Javascript to run in browsers.
 
 Typescript typechecking can be manually run with the following terminal command:
 
@@ -50,25 +52,76 @@ Typescript typechecking can be manually run with the following terminal command:
 npx tsc --noEmit
 ```
 
+> **More references**
+>
+> - [T3 Guide to Typescript](https://create.t3.gg/en/usage/typescript)
+> - [Official Typescript documentation](https://www.typescriptlang.org/)
+
 ### Next.js
 
-[Next.js](https://nextjs.org)
+Next.js is a React-based framework that offers significant optimizations with relatively small learning curve. Notably, it provides a powerful page routing system, ability to create built-in API routes without a separate backend, and a variety of options for fetching data and rendering content on the server.
+
+To run the webapp in development mode, use the following terminal command:
+
+```bash
+# Start the webapp in development mode (usually what you do in development). Exit with Ctrl + C
+npm run dev
+```
+
+To create and run a production build of the webapp (great for testing before deployment), use the following terminal command:
+
+```bash
+# Create a production build
+npm run build
+
+# Start the production build
+npm start
+```
+
+> **More references**
+>
+> - [T3 Guide to Next.js](https://create.t3.gg/en/usage/next-js)
+> - [Official Next.js documentation](https://nextjs.org)
 
 ### Supabase
 
-[Supabase documentation](https://supabase.com/docs)
+The backend uses [Supabase](https://supabase.com), an open-source Firebase alternative. Supabase provides all of Firebase's most important functionality and more:
+
+- **Database:** Built on Postgres, a relational database which has better structure than Firebase's Firestore NoSQL database and is open-source (thus more easily maintainable by clients).
+- **Realtime subscriptions:** Analogous to Firestore's `onSnapshot` realtime listeners, allowing you to listen to realtime changes in data.
+- **User authentication:** Like Firebase, a simple auth system with all social providers and user permissions for database access.
+- **File storage:** Like Firebase, cloud storage for any kind of digital content.
+- **Edge functions:** Server-side Typescript functions that run on Supabase without needing to set up a backend. Analogous to Firebase Cloud Functions, which are not available on the free tier!
+
+> **More references**
+>
+> - [Official Supabase documentation](https://supabase.com/docs)
 
 ### Prisma
 
-[Prisma](https://prisma.io)
+Prisma is an ORM ([object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping)) for Typescript that allows you to manage your database schema in a `schema.prisma` file, then generate a type-safe client used to query our database (in this case, Supabase). With Prisma, we can ensure alignment between our codebase and database schema and manage our database from our codebase, all within the safety of Typescript.
+
+> **More references**
+>
+> - [T3 guide to Prisma](https://create.t3.gg/en/usage/prisma)
+>
+> - [Official Prisma documentation](https://prisma.io)
 
 ### tRPC
 
+Finally, we use tRPC to create typesafe API routes to query the Prisma schema from our frontend. These components synergize to produce a highly flexible webapp with full-stack typesafety.
+
 [tRPC](https://trpc.io)
+
+### Environment variables
+
+The T3 stack uses its own package to validate and provide typesafety to environment variables, so the process of adding an environment variable is slightly more involved than just updating `.env.local`. Instructions for managing environment variables are [here](https://create.t3.gg/en/usage/env-variables).
 
 ---
 
 ## Development tools
+
+This section provides information on various tools this project uses to streamline the development process.
 
 ### Code formatting and linting tools
 
@@ -79,6 +132,11 @@ The preset configurations should work great out of the box, but feel free to cus
 #### [`eslint`](https://eslint.org)
 
 A [linting](<https://en.wikipedia.org/wiki/Lint_(software)>) tool that statically analyzes our code to detect and fix issues with code quality (like unused variables, residual console statements, etc). `eslint` is configured to run on save and before making a `git commit` (see below), but you can also run it manually with the following terminal commands:
+
+```bash
+# Easiest way to lint all files in the project.
+npm run lint
+```
 
 ```bash
 # Lint a specific file (or all files by using "."). Add the --fix tag to have eslint correct errors that are automatically fixable.
