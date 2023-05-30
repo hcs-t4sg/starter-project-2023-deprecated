@@ -1,8 +1,26 @@
+import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { type NextPage } from "next";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const supabaseClient = useSupabaseClient();
+  const user = useUser();
+
+  if (!user)
+    return (
+      <main>
+        <Auth
+          redirectTo="http://localhost:3000/"
+          appearance={{ theme: ThemeSupa }}
+          supabaseClient={supabaseClient}
+          providers={[]}
+          socialLayout="horizontal"
+        />
+      </main>
+    );
 
   return (
     <>
