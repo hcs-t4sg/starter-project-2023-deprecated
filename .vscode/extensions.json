@@ -5,6 +5,7 @@
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
     "editorconfig.editorconfig",
-    "prisma.prisma"
+    "prisma.prisma",
+    "bradlc.vscode-tailwindcss"
   ]
 }
