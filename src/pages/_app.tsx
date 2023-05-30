@@ -1,5 +1,5 @@
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
-import { type Session, SessionContextProvider } from "@supabase/auth-helpers-react";
+import { SessionContextProvider, type Session } from "@supabase/auth-helpers-react";
 import { type AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
