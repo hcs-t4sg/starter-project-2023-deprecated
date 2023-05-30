@@ -5,7 +5,7 @@ const config = {
   jsxSingleQuote: false,
   semi: true,
   trailingComma: "all",
-  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-prisma"],
+  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-prisma", "prettier-plugin-tailwindcss"],
   // Documentation for the following 2: https://github.com/trivago/prettier-plugin-sort-imports
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,

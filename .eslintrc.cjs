@@ -29,7 +29,7 @@ const config = {
   rules: {
     "@typescript-eslint/consistent-type-imports": [
       // https://typescript-eslint.io/rules/consistent-type-imports/
-      "error", // https://eslint.org/docs/latest/use/configure/rules
+      "warn", // https://eslint.org/docs/latest/use/configure/rules
       {
         prefer: "type-imports",
         fixStyle: "inline-type-imports",
