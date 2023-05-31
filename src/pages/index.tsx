@@ -2,6 +2,7 @@ import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { type NextPage } from "next";
+import { TypographyH2, TypographyP } from "~/components/ui/typography";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
@@ -26,12 +27,12 @@ const Home: NextPage = () => {
     <>
       {/* //TODO Figure out where to put the main tag once more components are added */}
       <main>
-        <p>Welcome to the T4SG starter project!</p>
-        <p>
-          This starter project comes unstyled, so we recommend you add your own styling/component library. See README
-          for recommendations!
-        </p>
-        <p>{hello.data ? hello.data.greeting : "Loading tRPC query..."}</p>
+        <TypographyH2>Welcome to the T4SG starter project!</TypographyH2>
+        <TypographyP>
+          This starter project is styled with TailwindCSS and uses shadcn/ui as a component library. Feel free to add
+          your own components!
+        </TypographyP>
+        <TypographyP>{hello.data ? hello.data.greeting : "Loading tRPC query..."}</TypographyP>
       </main>
     </>
   );
