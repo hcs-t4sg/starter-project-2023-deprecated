@@ -5,7 +5,7 @@ const config = {
   jsxSingleQuote: false,
   semi: true,
   trailingComma: "all",
-  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-prisma", "prettier-plugin-tailwindcss"],
+  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
 };
 
 /* The following Prettier config options are handled by .editorconfig and not this file:

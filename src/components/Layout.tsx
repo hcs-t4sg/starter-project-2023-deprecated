@@ -4,6 +4,7 @@ import { type ReactNode } from "react";
 import { cn } from "~/lib/utils";
 
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/router";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import {
@@ -14,6 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { type Database } from "~/schema";
 import { ModeToggle } from "./mode-toggle";
 
 export default function Layout({ children }: { children: ReactNode }) {
@@ -47,12 +49,15 @@ function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
   );
 }
 function UserNav() {
-  const supabaseClient = useSupabaseClient();
+  const supabaseClient = useSupabaseClient<Database>();
   const user = useUser();
 
-  const handleSignOut = () => {
-    void supabaseClient.auth.signOut();
-  };
+  const router = useRouter();
+
+  const handleSignOut = void (async () => {
+    await supabaseClient.auth.signOut();
+    await router.push("/");
+  });
 
   return (
     <DropdownMenu>

@@ -4,11 +4,12 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { type NextPage } from "next";
 import { useTheme } from "next-themes";
 import { TypographyH2, TypographyP } from "~/components/ui/typography";
+import { type Database } from "~/schema";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
-  const supabaseClient = useSupabaseClient();
+  const supabaseClient = useSupabaseClient<Database>();
   const user = useUser();
   const { theme } = useTheme();
 

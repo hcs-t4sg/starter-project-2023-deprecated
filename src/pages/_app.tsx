@@ -5,6 +5,7 @@ import { type AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
 import Layout from "~/components/layout";
+import { type Database } from "~/schema";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
 
@@ -19,7 +20,7 @@ function MyApp({
   initialSession: Session;
 }>) {
   // Create a new supabase browser client on every first render.
-  const [supabaseClient] = useState(() => createPagesBrowserClient());
+  const [supabaseClient] = useState(() => createPagesBrowserClient<Database>());
 
   return (
     <>

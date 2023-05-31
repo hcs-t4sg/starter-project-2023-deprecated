@@ -1,13 +1,12 @@
 import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
 import { type NextApiHandler } from "next";
+import { type Database } from "~/schema";
 
 const handler: NextApiHandler = async (req, res) => {
   const { code } = req.query;
 
   if (code) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const supabase = createPagesServerClient({ req, res });
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    const supabase = createPagesServerClient<Database>({ req, res });
     await supabase.auth.exchangeCodeForSession(String(code));
   }
 
