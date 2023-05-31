@@ -1,9 +1,10 @@
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider, type Session } from "@supabase/auth-helpers-react";
+import { ThemeProvider } from "next-themes";
 import { type AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
-import Layout from "~/components/Layout";
+import Layout from "~/components/layout";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
 
@@ -27,11 +28,13 @@ function MyApp({
         <meta name="description" content="T4SG starter project 2023. Bootstrapped with create-t3-app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SessionContextProvider supabaseClient={supabaseClient} initialSession={pageProps.initialSession}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SessionContextProvider>
+      <ThemeProvider attribute="class">
+        <SessionContextProvider supabaseClient={supabaseClient} initialSession={pageProps.initialSession}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SessionContextProvider>
+      </ThemeProvider>
     </>
   );
 }

@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Layout({ children }: { children: ReactNode }) {
   const user = useUser();
@@ -24,11 +25,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="border-b">
           <div className="flex h-16 items-center px-4">
             <MainNav />
-            {user && (
-              <div className="ml-auto flex items-center space-x-4">
-                <UserNav />
-              </div>
-            )}
+            <div className="ml-auto flex items-center space-x-4">
+              <ModeToggle />
+              {user && <UserNav />}
+            </div>
           </div>
         </div>
         <div className="flex-1 space-y-4 p-8 pt-6">{children}</div>
@@ -49,7 +49,6 @@ function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
 function UserNav() {
   const supabaseClient = useSupabaseClient();
   const user = useUser();
-  console.log(user);
 
   const handleSignOut = () => {
     void supabaseClient.auth.signOut();

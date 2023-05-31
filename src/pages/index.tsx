@@ -2,6 +2,7 @@ import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { type NextPage } from "next";
+import { useTheme } from "next-themes";
 import { TypographyH2, TypographyP } from "~/components/ui/typography";
 import { api } from "~/utils/api";
 
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
   const supabaseClient = useSupabaseClient();
   const user = useUser();
+  const { theme } = useTheme();
 
   if (!user)
     return (
@@ -16,6 +18,7 @@ const Home: NextPage = () => {
         <Auth
           redirectTo="http://localhost:3000/"
           appearance={{ theme: ThemeSupa }}
+          theme={theme === "light" ? "default" : "dark"}
           supabaseClient={supabaseClient}
           providers={[]}
           socialLayout="horizontal"
