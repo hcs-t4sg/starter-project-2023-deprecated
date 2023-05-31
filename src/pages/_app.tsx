@@ -3,7 +3,7 @@ import { SessionContextProvider, type Session } from "@supabase/auth-helpers-rea
 import { type AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
-import Layout from "~/components/layout";
+import Layout from "~/components/Layout";
 import "~/styles/globals.css";
 import { api } from "~/utils/api";
 
