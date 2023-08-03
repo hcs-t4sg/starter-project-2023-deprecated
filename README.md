@@ -1,5 +1,9 @@
 # T4SG Starter Project
 
+# DEPRECATED
+
+This is an old version of the T4SG Eng starter project developed in summer 2023. The project uses the Next.js `pages` router and several components of the T3 stack. If you wish to use this stack, the project should still be functional. Otherwise, check out the `starter-project-2023-v2` repo instead!
+
 - [T4SG Starter Project](#t4sg-starter-project)
   - [Introduction](#introduction)
   - [Setup](#setup)
